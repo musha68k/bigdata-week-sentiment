@@ -40,7 +40,7 @@ object Classification {
 
     // Prepare training documents, which are labeled.
     var doc_id = 0L
-    val training_set = CSVReader.read(new FileReader("target/tweet-sentiment-dataset/training.1600000.processed.noemoticon.csv"))
+    val training_set = CSVReader.read(new FileReader("./tweet-sentiment-dataset/training.1600000.processed.noemoticon.csv"))
     val training = training_set.map { line =>
       doc_id = doc_id + 1L
       LabeledDocument(doc_id, line(5), line(0).toDouble/4.0)
@@ -65,7 +65,7 @@ object Classification {
     val model = pipeline.fit(training.toDF())
 
     // Prepare test documents, which are unlabeled.
-    val test_set = CSVReader.read(new FileReader("target/tweet-sentiment-dataset/testdata.manual.2009.06.14.csv"))
+    val test_set = CSVReader.read(new FileReader("./tweet-sentiment-dataset/testdata.manual.2009.06.14.csv"))
     val test = test_set.map { line =>
       doc_id = doc_id + 1L
       Document(doc_id, line(5))

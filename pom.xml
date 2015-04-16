@@ -32,11 +32,6 @@
     <artifactId>breeze_2.10</artifactId>
     <version>0.11</version>
   </dependency>
-<!--   <dependency>
-    <groupId>net.alchim31.maven</groupId>
-    <artifactId>scala-maven-plugin</artifactId>
-    <version>3.2.0</version>
-  </dependency> -->
 </dependencies>
 <build>
   <plugins>
@@ -51,7 +46,6 @@
           </configuration>
           <goals>
             <goal>compile</goal>
-            <goal>testCompile</goal>
           </goals>
         </execution>
       </executions>
@@ -78,14 +72,14 @@
       <executions>
         <execution>
           <id>download-training-set</id>
-          <phase>package</phase>
+          <phase>process-resources</phase>
           <goals>
             <goal>wget</goal>
           </goals>
           <configuration>
             <url>http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip</url>
             <unpack>true</unpack>
-            <outputDirectory>${project.build.directory}/tweet-sentiment-dataset</outputDirectory>
+            <outputDirectory>${basedir}/tweet-sentiment-dataset</outputDirectory>
           </configuration>
         </execution>
       </executions>
