@@ -1,9 +1,6 @@
 /**
- * A simple text classification pipeline that recognizes "spark" from input text. This is to show
- * how to create and configure an ML pipeline. Run with
- *
- * Based on the Spark Example ::: bin/run-example ml.SimpleTextClassificationPipeline
- *
+ * A simple text classification pipeline that classify tweets according to the sentiment they convey. This is to show
+ * how to create and configure an ML pipeline. Run with mvn scala:run.
  */
 
 import java.io.FileReader
@@ -23,11 +20,6 @@ case class LabeledDocument(id: Long, text: String, label: Double)
 
 @BeanInfo
 case class Document(id: Long, text: String)
-
-/**
- * A simple text classification pipeline that recognizes "spark" from input text. This is to show
- * how to create and configure an ML pipeline.
- */
 
 object Classification {
 
