@@ -37,8 +37,8 @@ object Classification {
   def main(args: Array[String]) {
 
     // While Spark is running, connect to http://localhost:4040/ to see the progress
-    // We'll run on a single box (local machine) using up to 16 cores
-    val conf = new SparkConf().setAppName("Sentiment classification example").setMaster("local[16]") 
+    // We'll run on a single box (local machine) using up to 32 cores
+    val conf = new SparkConf().setAppName("Sentiment classification example").setMaster("local[32]") 
     val sc = new SparkContext(conf)
 
     // Prepare training documents, which are labeled.
