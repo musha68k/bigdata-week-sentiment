@@ -39,12 +39,11 @@ Tweet-835886: "is studing math :wink: tomorrow exam and dentist :)" is NEGATIVE 
 
 
 ## Running on AWS
-This project includes a description of the infrastructure setup to run spack on AWS. We use Terrform. infra.ft is the definition file for the infrastructure.
+This project includes a description of the infrastructure setup to run Spark on AWS. We use [Terraform](https://terraform.io). infra.ft is the definition file for the infrastructure.
 
 Here's how to use it:
 - Install [terraform](https://www.terraform.io/downloads.html)
-- terraform apply -var access_key='access key to your AWS account' -var secret_key='secret key to your AWS account'
-- This command creates a new ec2 instance and takes about 5 minutes to install spark and run the job
-- ssh -i key.pem ec2-user@<ec2 instance host name> -- see terraform output for the hostname of the new ec2 instance
+- Run: terraform apply -var access_key='access key to your AWS account' -var secret_key='secret key to your AWS account' This command creates a new ec2 instance and takes about 5 minutes to install spark and run the job
+- To access the instance, run: ssh -i key.pem ec2-user@<ec2 instance host name> -- see terraform output for the hostname of the new ec2 instance
 - Don't forget to destroy the infrastructure when you no longer need it: terraform apply -var access_key='access key to your AWS account' -var secret_key='secret key to your AWS account'
 
